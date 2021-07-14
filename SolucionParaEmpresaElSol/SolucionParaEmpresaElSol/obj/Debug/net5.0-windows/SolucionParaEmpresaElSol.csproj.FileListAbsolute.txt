@@ -1,0 +1,39 @@
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.exe
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.deps.json
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.runtimeconfig.json
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.runtimeconfig.dev.json
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.dll
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\ref\SolucionParaEmpresaElSol.dll
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.pdb
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.EjerciciosBasicos.FEcuacion1.resources
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.AssemblyInfo.cs
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.dll
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\ref\SolucionParaEmpresaElSol.dll
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.pdb
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.genruntimeconfig.cache
+C:\Users\USER\source\repos\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.EjerciciosBasicos.FEstadisticas.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.exe
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.deps.json
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.runtimeconfig.json
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.runtimeconfig.dev.json
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.dll
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\ref\SolucionParaEmpresaElSol.dll
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\bin\Debug\net5.0-windows\SolucionParaEmpresaElSol.pdb
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.csproj.AssemblyReference.cache
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.EjerciciosBasicos.FEcuacion1.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.EjerciciosBasicos.FEstadisticas.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.csproj.GenerateResource.cache
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.AssemblyInfoInputs.cache
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.AssemblyInfo.cs
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.csproj.CoreCompileInputs.cache
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.dll
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\ref\SolucionParaEmpresaElSol.dll
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.pdb
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.genruntimeconfig.cache
+C:\Users\USER\Luis\Documentos\Luis\Uni\Progra Visual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.EjerciciosBasicos.FNumeroPerfecto.resources
