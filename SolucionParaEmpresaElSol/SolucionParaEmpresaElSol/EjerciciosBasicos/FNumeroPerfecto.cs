@@ -15,6 +15,7 @@ namespace SolucionParaEmpresaElSol.EjerciciosBasicos
         public FNumeroPerfecto()
         {
             InitializeComponent();
+
             this.ActiveControl = Numero;
         }
 
@@ -26,26 +27,24 @@ namespace SolucionParaEmpresaElSol.EjerciciosBasicos
             {
                 numero = int.Parse(Numero.Text);
             }
-            
 
             for (int iterador = 1; iterador < numero; iterador++)
             {
                 if (numero % iterador == 0)
                 {
-                    contador = contador + iterador;
+                    contador += iterador;
                 }
             }
 
             if (contador == numero)
             {
-                Consola.AppendText("> " + numero + " Es un número perfecto");
-                Consola.AppendText(System.Environment.NewLine);
+                Consola.AppendText("> " + numero + " Es un número perfecto" + System.Environment.NewLine);
             }
             else
             {
-                Consola.AppendText("> " + numero + " No es un número perfecto");
-                Consola.AppendText(System.Environment.NewLine);
+                Consola.AppendText("> " + numero + " No es un número perfecto" + System.Environment.NewLine);
             }
+            this.ActiveControl = Numero;
         }
     }
 }

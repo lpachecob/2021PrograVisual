@@ -31,9 +31,9 @@ namespace SolucionParaEmpresaElSol.EjerciciosBasicos
         {
             this.BotonCalcular = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.Numero = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Consola = new System.Windows.Forms.RichTextBox();
+            this.Numero = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,22 +56,13 @@ namespace SolucionParaEmpresaElSol.EjerciciosBasicos
             this.label1.TabIndex = 1;
             this.label1.Text = "Ingresa un Numero";
             // 
-            // Numero
-            // 
-            this.Numero.Location = new System.Drawing.Point(174, 36);
-            this.Numero.Name = "Numero";
-            this.Numero.Size = new System.Drawing.Size(184, 23);
-            this.Numero.TabIndex = 2;
-            this.Numero.Text = "0";
-            this.Numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.Controls.Add(this.Numero);
             this.panel1.Controls.Add(this.Consola);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.BotonCalcular);
-            this.panel1.Controls.Add(this.Numero);
             this.panel1.Location = new System.Drawing.Point(-10, -12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(398, 461);
@@ -85,6 +76,15 @@ namespace SolucionParaEmpresaElSol.EjerciciosBasicos
             this.Consola.Size = new System.Drawing.Size(246, 372);
             this.Consola.TabIndex = 3;
             this.Consola.Text = "";
+            // 
+            // Numero
+            // 
+            this.Numero.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Numero.Location = new System.Drawing.Point(146, 36);
+            this.Numero.Name = "Numero";
+            this.Numero.Size = new System.Drawing.Size(212, 29);
+            this.Numero.TabIndex = 4;
+            this.Numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FNumeroPerfecto
             // 
@@ -105,8 +105,8 @@ namespace SolucionParaEmpresaElSol.EjerciciosBasicos
 
         private System.Windows.Forms.Button BotonCalcular;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Numero;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RichTextBox Consola;
+        private System.Windows.Forms.TextBox Numero;
     }
 }
