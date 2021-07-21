@@ -29,7 +29,7 @@ namespace SolucionParaEmpresaElSol.EjerciciosBasicos
 
             for (int iterador = 0; iterador < 100; iterador++)
             {
-                int value = aleatoreo.Next(0, 1000);
+                int value = aleatoreo.Next(-40, 50);
                 Consola.Items.Add("Número " + iterador + ": " + value);
 
                 Numeros[iterador] = value;

@@ -58,3 +58,4 @@ C:\Users\USER\Luis\Documentos\Luis\Uni\2021PrograVisual\SolucionParaEmpresaElSol
 C:\Users\USER\Luis\Documentos\Luis\Uni\2021PrograVisual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.pdb
 C:\Users\USER\Luis\Documentos\Luis\Uni\2021PrograVisual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.genruntimeconfig.cache
 C:\Users\USER\Luis\Documentos\Luis\Uni\2021PrograVisual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.EjerciciosBasicos.FControlListbox.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\2021PrograVisual\SolucionParaEmpresaElSol\SolucionParaEmpresaElSol\obj\Debug\net5.0-windows\SolucionParaEmpresaElSol.EjerciciosBasicos.FlitrosAgua.resources

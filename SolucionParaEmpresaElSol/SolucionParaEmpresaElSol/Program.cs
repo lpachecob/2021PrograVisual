@@ -18,7 +18,7 @@ namespace SolucionParaEmpresaElSol
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FControlListbox());
+            Application.Run(new FlitrosAgua());
         }
     }
 }

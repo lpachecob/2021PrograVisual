@@ -10,6 +10,9 @@
     <Compile Update="EjerciciosBasicos\FEstadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EjerciciosBasicos\FlitrosAgua.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EjerciciosBasicos\FNumeroPerfecto.cs">
       <SubType>Form</SubType>
     </Compile>
