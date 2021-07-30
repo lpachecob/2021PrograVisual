@@ -23,3 +23,5 @@ C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\net5.
 C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\net5.0-windows\PrograVisual.Vistas.Ventanas.FEstadisticas.resources
 C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\net5.0-windows\PrograVisual.Vistas.Ventanas.FlitrosAgua.resources
 C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\net5.0-windows\PrograVisual.Vistas.Ventanas.FNumeroPerfecto.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\net5.0-windows\PrograVisual.Vistas.Ventanas.PrimerExamen_AreaTriangulo.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\net5.0-windows\PrograVisual.Vistas.Ventanas.PrimerExamen_SenoDeX.resources

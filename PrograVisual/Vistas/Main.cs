@@ -54,6 +54,12 @@ namespace PrograVisual.Vistas
                 case 4:
                     abrirFormulario(new FNumeroPerfecto());
                     break;
+                case 5:
+                    abrirFormulario(new PrimerExamen_AreaTriangulo());
+                    break;
+                case 6:
+                    abrirFormulario(new PrimerExamen_SenoDeX());
+                    break;
                 default:
                     abrirFormulario(new Inicio());
                     break;

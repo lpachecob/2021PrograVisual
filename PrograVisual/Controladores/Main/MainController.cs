@@ -18,6 +18,8 @@ namespace PrograVisual.Controladores.Main
             lista.Items.Add("Mayor, menor y promedio de 100 numeros");
             lista.Items.Add("Cuanto cobrar por litros de agua");
             lista.Items.Add("Numero Perfecto");
+            lista.Items.Add("Primer examen - Area del Triangulo");
+            lista.Items.Add("Primer examen - Seno de X");
         }
 
     }
