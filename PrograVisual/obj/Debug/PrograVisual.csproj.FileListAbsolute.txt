@@ -1,0 +1,15 @@
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\bin\Debug\PrograVisual.exe.config
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\bin\Debug\PrograVisual.exe
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\bin\Debug\PrograVisual.pdb
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.csproj.AssemblyReference.cache
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Properties.Resources.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.csproj.GenerateResource.cache
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.csproj.CoreCompileInputs.cache
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.exe
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.pdb
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Vista.MainWindow.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Vista.VentanaInicio.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Vista.Layout.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Vista.Categorias.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Vista.CategoriasComponents.ActualizarCategoria.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Vista.CategoriasComponents.NuevaCategoria.resources
