@@ -38,15 +38,14 @@ namespace PrograVisual.Vista
             {
                 ListarProductos(TextBusqueda.Text);
             }
-
-
         }
         private void ListaProductos_DoubleClick(object sender, EventArgs e)
         {
             cambiarEstadoElementos();
-            BotonConfirmacion.Text = "Actualizar";
             ComboCategorias.Items.Clear();
             ComboProveedores.Items.Clear();
+
+            BotonConfirmacion.Text = "Actualizar";
             Actualizar = true;
 
             id = ListaProductos.SelectedItem.ToString().Split(' ').ToList();
@@ -70,22 +69,7 @@ namespace PrograVisual.Vista
             ComboCategorias.SelectedIndex = 0;
             ComboProveedores.SelectedIndex = 0;
 
-            sqlConsulta = "SELECT CategoryID,CategoryName FROM Categories ORDER BY CategoryID ASC";
-
-            sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
-            SqlRegistros = sqlComando.ExecuteReader();
-            while (SqlRegistros.Read())
-            {
-                ComboCategorias.Items.Add("" + SqlRegistros["CategoryID"] + " - " + SqlRegistros["CategoryName"]);
-            }
-            sqlConsulta = "SELECT SupplierID,CompanyName FROM Suppliers ORDER BY SupplierID ASC";
-
-            sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
-            SqlRegistros = sqlComando.ExecuteReader();
-            while (SqlRegistros.Read())
-            {
-                ComboProveedores.Items.Add("" + SqlRegistros["SupplierID"] + " - " + SqlRegistros["CompanyName"]);
-            }
+            LlenarCombobox();
         }
 
         public void ListarProductos(string productID = null)
@@ -110,12 +94,30 @@ namespace PrograVisual.Vista
             }
         }
 
+        public void LlenarCombobox()
+        {
+            String sqlConsulta = "SELECT CategoryID,CategoryName FROM Categories ORDER BY CategoryID ASC";
 
+            SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
+            SqlDataReader SqlRegistros = sqlComando.ExecuteReader();
+            while (SqlRegistros.Read())
+            {
+                ComboCategorias.Items.Add("" + SqlRegistros["CategoryID"] + " - " + SqlRegistros["CategoryName"]);
+            }
+            sqlConsulta = "SELECT SupplierID,CompanyName FROM Suppliers ORDER BY SupplierID ASC";
+
+            sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
+            SqlRegistros = sqlComando.ExecuteReader();
+            while (SqlRegistros.Read())
+            {
+                ComboProveedores.Items.Add("" + SqlRegistros["SupplierID"] + " - " + SqlRegistros["CompanyName"]);
+            }
+        }
 
         public void cambiarEstadoElementos()
         {
             ListaProductos.Visible = !ListaProductos.Visible;
-            TextBusqueda.Visible = !TextBusqueda.Visible;
+            TextBusqueda.ReadOnly = !TextBusqueda.ReadOnly;
             label3.Visible = !label3.Visible;
             label4.Visible = !label4.Visible;
             label5.Visible = !label5.Visible;
@@ -134,6 +136,8 @@ namespace PrograVisual.Vista
             TextReorderLevel.Visible = !TextReorderLevel.Visible;
             BotonCancelar.Visible = !BotonCancelar.Visible;
             BotonConfirmacion.Visible = !BotonConfirmacion.Visible;
+            BotonNuevoProducto.Visible = !BotonNuevoProducto.Visible;
+            BtnEliminar.Visible = !BtnEliminar.Visible;
         }
 
         private void BotonCancelar_Click(object sender, EventArgs e)
@@ -141,59 +145,227 @@ namespace PrograVisual.Vista
             cambiarEstadoElementos();
             BotonConfirmacion.Text = "";
             TextBusqueda.Text = "";
+            TextBusqueda.Visible = true;
         }
 
         private void BotonConfirmacion_Click(object sender, EventArgs e)
         {
             if (Actualizar)
             {
-                string textId = TextBusqueda.Text;
-                string textNombreProducto = TextProductName.Text.Replace("'", "''");
-
-                List<string> textCategoria = ComboCategorias.SelectedItem.ToString().Split(' ').ToList();
-                List<string> textProveedores = ComboProveedores.SelectedItem.ToString().Split(' ').ToList();
-                string textCantidadUnidades = TextCantidadesUnidad.Text;
-                string textPrecioUnitario = TextPrecioUnitario.Text;
-                string textUnidadesStock = TextUnidadesStock.Text;
-                string textUnidadesOrdenadas = TextUnidadesOrdenadas.Text;
-                string textReorderLevel = TextReorderLevel.Text;
-
-                String sqlConsulta = "UPDATE Products SET " +
-                    "Productname = '" + textNombreProducto + "', " +
-                    "SupplierID = '" + textProveedores[0] + "', " +
-                    "CategoryID = '" + textCategoria[0] + "', " +
-                    "QuantityPerUnit = '" + textCantidadUnidades + "', " +
-                    "UnitPrice = '" + textPrecioUnitario + "', " +
-                    "UnitsInStock = '" + textUnidadesStock + "', " +
-                    "UnitsOnOrder = '" + textUnidadesOrdenadas + "', " +
-                    "ReorderLevel = '" + textReorderLevel + "' " +
-                    "WHERE ProductID = '" + textId + "'";
-
-                SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
-                int filasAfectadas = sqlComando.ExecuteNonQuery();
-                if (filasAfectadas == 1)
+                try
                 {
-                    LabelInfo.Text = "Actualización Exitosa!";
+                    string textId = TextBusqueda.Text;
+                    string textNombreProducto = TextProductName.Text.Replace("'", "''");
+
+                    List<string> textCategoria = ComboCategorias.SelectedItem.ToString().Split(' ').ToList();
+                    List<string> textProveedores = ComboProveedores.SelectedItem.ToString().Split(' ').ToList();
+                    string textCantidadUnidades = TextCantidadesUnidad.Text;
+                    string textPrecioUnitario = TextPrecioUnitario.Text;
+                    string textUnidadesStock = TextUnidadesStock.Text;
+                    string textUnidadesOrdenadas = TextUnidadesOrdenadas.Text;
+                    string textReorderLevel = TextReorderLevel.Text;
+
+                    String sqlConsulta = "UPDATE Products SET " +
+                        "Productname = '" + textNombreProducto + "', " +
+                        "SupplierID = '" + textProveedores[0] + "', " +
+                        "CategoryID = '" + textCategoria[0] + "', " +
+                        "QuantityPerUnit = '" + textCantidadUnidades + "', " +
+                        "UnitPrice = '" + textPrecioUnitario + "', " +
+                        "UnitsInStock = '" + textUnidadesStock + "', " +
+                        "UnitsOnOrder = '" + textUnidadesOrdenadas + "', " +
+                        "ReorderLevel = '" + textReorderLevel + "' " +
+                        "WHERE ProductID = '" + textId + "'";
+
+                    DialogResult dialogResult = MessageBox.Show("Está seguro de añadir el nuevo producto", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
+                        int filasAfectadas = sqlComando.ExecuteNonQuery();
+                        if (filasAfectadas == 1)
+                        {
+                            LabelInfo.Text = "Actualización Exitosa!";
+                            ListarProductos();
+                            TextBusqueda.Visible = true;
+                        }
+                        else
+                        {
+                            LabelInfo.Text = "No se pudo actualizar";
+                            ListarProductos();
+                            TextBusqueda.Visible = true;
+                        }
+
+                        Actualizar = false;
+                        cambiarEstadoElementos();
+                        BotonConfirmacion.Text = "";
+                        TextBusqueda.Text = "";
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        Actualizar = false;
+                        cambiarEstadoElementos();
+                        BotonConfirmacion.Text = "";
+                        TextBusqueda.Text = "";
+                    }
+
+
                 }
-                else
+                catch (SqlException ExceptionMessage)
                 {
-                    LabelInfo.Text = "No se pudo actualizar";
+                    MessageBox.Show(ExceptionMessage + "");
                 }
 
-                Actualizar = false;
-                cambiarEstadoElementos();
-                BotonConfirmacion.Text = "";
-                TextBusqueda.Text = "";
             }
             if (Nuevo)
             {
+
+                try
+                {
+                    string textNombreProducto = TextProductName.Text.Replace("'", "''");
+                    List<string> textCategoria = ComboCategorias.SelectedItem.ToString().Split(' ').ToList();
+                    List<string> textProveedores = ComboProveedores.SelectedItem.ToString().Split(' ').ToList();
+                    string textCantidadUnidades = TextCantidadesUnidad.Text.ToString();
+                    string textPrecioUnitario = TextPrecioUnitario.Text.ToString();
+                    string textUnidadesStock = TextUnidadesStock.Text.ToString();
+                    string textUnidadesOrdenadas = TextUnidadesOrdenadas.Text.ToString();
+                    string textReorderLevel = TextReorderLevel.Text.ToString();
+
+
+                    String sqlConsulta = "INSERT INTO Products (" +
+                        "ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued) " +
+                        "VALUES(" +
+                        "'" + textNombreProducto + "', " +
+                        "'" + textProveedores[0] + "', " +
+                        "'" + textCategoria[0] + "', " +
+                        "'" + textCantidadUnidades + "', " +
+                        "'" + textPrecioUnitario + "', " +
+                        "'" + textUnidadesStock + "', " +
+                        "'" + textUnidadesOrdenadas + "', " +
+                        "'" + textReorderLevel + "', " +
+                        "0)";
+
+                    DialogResult dialogResult = MessageBox.Show("Está seguro de añadir el nuevo producto", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
+                        int filasAfectadas = sqlComando.ExecuteNonQuery();
+                        if (filasAfectadas == 1)
+                        {
+                            LabelInfo.Text = "Producto Añadido!";
+                            ListarProductos();
+                            TextBusqueda.Visible = true;
+                        }
+                        else
+                        {
+                            LabelInfo.Text = "No se pudo Añadir";
+                            ListarProductos();
+                            TextBusqueda.Visible = true;
+                        }
+
+                        Nuevo = false;
+                        cambiarEstadoElementos();
+                        BotonConfirmacion.Text = "";
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        Nuevo = false;
+                        cambiarEstadoElementos();
+                        BotonConfirmacion.Text = "";
+                        TextBusqueda.Visible = true;
+                    }
+
+
+                }
+                catch (SqlException ExceptionMessage)
+                {
+                    MessageBox.Show(ExceptionMessage + "");
+                }
 
             }
         }
 
         private void BotonNuevoProducto_Click(object sender, EventArgs e)
         {
+            LabelInfo.Text = "";
+            cambiarEstadoElementos();
+            TextBusqueda.Visible = false;
+            ComboCategorias.Items.Clear();
+            ComboProveedores.Items.Clear();
+            TextBusqueda.Text = "";
+            TextProductName.Text = "";
+            TextCantidadesUnidad.Text = "";
+            TextPrecioUnitario.Text = "";
+            TextUnidadesStock.Text = "";
+            TextUnidadesOrdenadas.Text = "";
+            TextReorderLevel.Text = "";
+            ComboCategorias.Items.Add("--Elige una categoría--");
+            ComboProveedores.Items.Add("--Elige un proveedor--");
 
+            ComboCategorias.SelectedIndex = 0;
+            ComboProveedores.SelectedIndex = 0;
+
+            BotonConfirmacion.Text = "Añadir";
+            Nuevo = true;
+
+
+
+            LlenarCombobox();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string textId = TextBusqueda.Text;
+
+                String sqlConsulta = "UPDATE Products SET " +
+                        "Discontinued = '1'" +
+                        "WHERE ProductID = '" + textId + "'";
+
+                DialogResult dialogResult = MessageBox.Show("Está seguro de eliminar el producto", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
+                    int filasAfectadas = sqlComando.ExecuteNonQuery();
+                    if (filasAfectadas == 1)
+                    {
+                        LabelInfo.Text = "Producto Eliminado!";
+                        ListarProductos();
+                    }
+                    else
+                    {
+                        LabelInfo.Text = "No se pudo Eliminar";
+                        ListarProductos();
+                    }
+
+                    Actualizar = false;
+                    cambiarEstadoElementos();
+                    BotonConfirmacion.Text = "";
+                    TextBusqueda.Text = "";
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    Actualizar = false;
+                    cambiarEstadoElementos();
+                    BotonConfirmacion.Text = "";
+                    TextBusqueda.Text = "";
+                }
+
+
+            }
+            catch (SqlException ExceptionMessage)
+            {
+                MessageBox.Show(ExceptionMessage + "");
+            }
+        }
+
+        private void ListaProductos_Click(object sender, EventArgs e)
+        {
+            LabelInfo.Text = "";
+        }
+
+        private void TextBusqueda_Click(object sender, EventArgs e)
+        {
+            LabelInfo.Text = "";
         }
     }
 }

@@ -56,8 +56,8 @@ namespace PrograVisual.Vista
             this.BotonConfirmacion = new System.Windows.Forms.Button();
             this.BotonCancelar = new System.Windows.Forms.Button();
             this.LabelInfo = new System.Windows.Forms.Label();
-            this.validatetext = new System.Windows.Forms.TextBox();
             this.BotonNuevoProducto = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -78,8 +78,9 @@ namespace PrograVisual.Vista
             this.ListaProductos.FormattingEnabled = true;
             this.ListaProductos.Location = new System.Drawing.Point(12, 90);
             this.ListaProductos.Name = "ListaProductos";
-            this.ListaProductos.Size = new System.Drawing.Size(408, 199);
+            this.ListaProductos.Size = new System.Drawing.Size(408, 225);
             this.ListaProductos.TabIndex = 1;
+            this.ListaProductos.Click += new System.EventHandler(this.ListaProductos_Click);
             this.ListaProductos.DoubleClick += new System.EventHandler(this.ListaProductos_DoubleClick);
             // 
             // TextBusqueda
@@ -87,7 +88,8 @@ namespace PrograVisual.Vista
             this.TextBusqueda.Location = new System.Drawing.Point(12, 54);
             this.TextBusqueda.Name = "TextBusqueda";
             this.TextBusqueda.Size = new System.Drawing.Size(408, 20);
-            this.TextBusqueda.TabIndex = 2;
+            this.TextBusqueda.TabIndex = 1;
+            this.TextBusqueda.Click += new System.EventHandler(this.TextBusqueda_Click);
             this.TextBusqueda.TextChanged += new System.EventHandler(this.TextBusqueda_TextChanged);
             // 
             // northwindDataSet
@@ -117,7 +119,7 @@ namespace PrograVisual.Vista
             this.TextProductName.Location = new System.Drawing.Point(12, 106);
             this.TextProductName.Name = "TextProductName";
             this.TextProductName.Size = new System.Drawing.Size(315, 20);
-            this.TextProductName.TabIndex = 4;
+            this.TextProductName.TabIndex = 2;
             this.TextProductName.Visible = false;
             // 
             // ComboProveedores
@@ -126,7 +128,7 @@ namespace PrograVisual.Vista
             this.ComboProveedores.Location = new System.Drawing.Point(12, 151);
             this.ComboProveedores.Name = "ComboProveedores";
             this.ComboProveedores.Size = new System.Drawing.Size(146, 21);
-            this.ComboProveedores.TabIndex = 5;
+            this.ComboProveedores.TabIndex = 4;
             this.ComboProveedores.Visible = false;
             // 
             // ComboCategorias
@@ -134,8 +136,8 @@ namespace PrograVisual.Vista
             this.ComboCategorias.FormattingEnabled = true;
             this.ComboCategorias.Location = new System.Drawing.Point(333, 105);
             this.ComboCategorias.Name = "ComboCategorias";
-            this.ComboCategorias.Size = new System.Drawing.Size(121, 21);
-            this.ComboCategorias.TabIndex = 6;
+            this.ComboCategorias.Size = new System.Drawing.Size(149, 21);
+            this.ComboCategorias.TabIndex = 3;
             this.ComboCategorias.Visible = false;
             // 
             // TextCantidadesUnidad
@@ -143,7 +145,7 @@ namespace PrograVisual.Vista
             this.TextCantidadesUnidad.Location = new System.Drawing.Point(12, 199);
             this.TextCantidadesUnidad.Name = "TextCantidadesUnidad";
             this.TextCantidadesUnidad.Size = new System.Drawing.Size(146, 20);
-            this.TextCantidadesUnidad.TabIndex = 7;
+            this.TextCantidadesUnidad.TabIndex = 5;
             this.TextCantidadesUnidad.Visible = false;
             // 
             // label3
@@ -211,7 +213,7 @@ namespace PrograVisual.Vista
             this.TextPrecioUnitario.Location = new System.Drawing.Point(164, 199);
             this.TextPrecioUnitario.Name = "TextPrecioUnitario";
             this.TextPrecioUnitario.Size = new System.Drawing.Size(146, 20);
-            this.TextPrecioUnitario.TabIndex = 12;
+            this.TextPrecioUnitario.TabIndex = 6;
             this.TextPrecioUnitario.Visible = false;
             // 
             // label8
@@ -231,7 +233,7 @@ namespace PrograVisual.Vista
             this.TextUnidadesStock.Location = new System.Drawing.Point(316, 199);
             this.TextUnidadesStock.Name = "TextUnidadesStock";
             this.TextUnidadesStock.Size = new System.Drawing.Size(146, 20);
-            this.TextUnidadesStock.TabIndex = 14;
+            this.TextUnidadesStock.TabIndex = 7;
             this.TextUnidadesStock.Visible = false;
             // 
             // label9
@@ -251,7 +253,7 @@ namespace PrograVisual.Vista
             this.TextUnidadesOrdenadas.Location = new System.Drawing.Point(12, 260);
             this.TextUnidadesOrdenadas.Name = "TextUnidadesOrdenadas";
             this.TextUnidadesOrdenadas.Size = new System.Drawing.Size(146, 20);
-            this.TextUnidadesOrdenadas.TabIndex = 16;
+            this.TextUnidadesOrdenadas.TabIndex = 7;
             this.TextUnidadesOrdenadas.Visible = false;
             // 
             // label10
@@ -271,7 +273,7 @@ namespace PrograVisual.Vista
             this.TextReorderLevel.Location = new System.Drawing.Point(167, 260);
             this.TextReorderLevel.Name = "TextReorderLevel";
             this.TextReorderLevel.Size = new System.Drawing.Size(146, 20);
-            this.TextReorderLevel.TabIndex = 18;
+            this.TextReorderLevel.TabIndex = 8;
             this.TextReorderLevel.Visible = false;
             // 
             // BotonConfirmacion
@@ -279,7 +281,7 @@ namespace PrograVisual.Vista
             this.BotonConfirmacion.Location = new System.Drawing.Point(478, 294);
             this.BotonConfirmacion.Name = "BotonConfirmacion";
             this.BotonConfirmacion.Size = new System.Drawing.Size(115, 32);
-            this.BotonConfirmacion.TabIndex = 20;
+            this.BotonConfirmacion.TabIndex = 9;
             this.BotonConfirmacion.UseVisualStyleBackColor = true;
             this.BotonConfirmacion.Visible = false;
             this.BotonConfirmacion.Click += new System.EventHandler(this.BotonConfirmacion_Click);
@@ -289,7 +291,7 @@ namespace PrograVisual.Vista
             this.BotonCancelar.Location = new System.Drawing.Point(357, 294);
             this.BotonCancelar.Name = "BotonCancelar";
             this.BotonCancelar.Size = new System.Drawing.Size(115, 32);
-            this.BotonCancelar.TabIndex = 21;
+            this.BotonCancelar.TabIndex = 10;
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             this.BotonCancelar.Visible = false;
@@ -299,35 +301,39 @@ namespace PrograVisual.Vista
             // 
             this.LabelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelInfo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelInfo.Location = new System.Drawing.Point(354, 329);
+            this.LabelInfo.Location = new System.Drawing.Point(354, 331);
             this.LabelInfo.Name = "LabelInfo";
             this.LabelInfo.Size = new System.Drawing.Size(239, 25);
             this.LabelInfo.TabIndex = 22;
             this.LabelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // validatetext
-            // 
-            this.validatetext.Location = new System.Drawing.Point(12, 329);
-            this.validatetext.Name = "validatetext";
-            this.validatetext.Size = new System.Drawing.Size(315, 20);
-            this.validatetext.TabIndex = 23;
             // 
             // BotonNuevoProducto
             // 
             this.BotonNuevoProducto.Location = new System.Drawing.Point(446, 90);
             this.BotonNuevoProducto.Name = "BotonNuevoProducto";
             this.BotonNuevoProducto.Size = new System.Drawing.Size(133, 36);
-            this.BotonNuevoProducto.TabIndex = 24;
+            this.BotonNuevoProducto.TabIndex = 2;
             this.BotonNuevoProducto.Text = "Nuevo Producto";
             this.BotonNuevoProducto.UseVisualStyleBackColor = true;
             this.BotonNuevoProducto.Click += new System.EventHandler(this.BotonNuevoProducto_Click);
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.Location = new System.Drawing.Point(12, 295);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(133, 36);
+            this.BtnEliminar.TabIndex = 23;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Visible = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(605, 363);
+            this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BotonNuevoProducto);
-            this.Controls.Add(this.validatetext);
             this.Controls.Add(this.LabelInfo);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.BotonConfirmacion);
@@ -387,7 +393,7 @@ namespace PrograVisual.Vista
         private System.Windows.Forms.Button BotonConfirmacion;
         private System.Windows.Forms.Button BotonCancelar;
         private System.Windows.Forms.Label LabelInfo;
-        private System.Windows.Forms.TextBox validatetext;
         private System.Windows.Forms.Button BotonNuevoProducto;
+        private System.Windows.Forms.Button BtnEliminar;
     }
 }
