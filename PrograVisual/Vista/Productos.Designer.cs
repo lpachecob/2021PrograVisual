@@ -58,6 +58,8 @@ namespace PrograVisual.Vista
             this.LabelInfo = new System.Windows.Forms.Label();
             this.BotonNuevoProducto = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
+            this.TooltipListaProductos = new System.Windows.Forms.ToolTip(this.components);
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +77,7 @@ namespace PrograVisual.Vista
             // 
             // ListaProductos
             // 
+            this.ListaProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ListaProductos.FormattingEnabled = true;
             this.ListaProductos.Location = new System.Drawing.Point(12, 90);
             this.ListaProductos.Name = "ListaProductos";
@@ -85,9 +88,9 @@ namespace PrograVisual.Vista
             // 
             // TextBusqueda
             // 
-            this.TextBusqueda.Location = new System.Drawing.Point(12, 54);
+            this.TextBusqueda.Location = new System.Drawing.Point(79, 54);
             this.TextBusqueda.Name = "TextBusqueda";
-            this.TextBusqueda.Size = new System.Drawing.Size(408, 20);
+            this.TextBusqueda.Size = new System.Drawing.Size(341, 20);
             this.TextBusqueda.TabIndex = 1;
             this.TextBusqueda.Click += new System.EventHandler(this.TextBusqueda_Click);
             this.TextBusqueda.TextChanged += new System.EventHandler(this.TextBusqueda_TextChanged);
@@ -328,10 +331,22 @@ namespace PrograVisual.Vista
             this.BtnEliminar.Visible = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label11.Location = new System.Drawing.Point(15, 54);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 17);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Buscar";
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(605, 363);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BotonNuevoProducto);
             this.Controls.Add(this.LabelInfo);
@@ -395,5 +410,7 @@ namespace PrograVisual.Vista
         private System.Windows.Forms.Label LabelInfo;
         private System.Windows.Forms.Button BotonNuevoProducto;
         private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.ToolTip TooltipListaProductos;
+        private System.Windows.Forms.Label label11;
     }
 }

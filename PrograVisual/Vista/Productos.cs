@@ -25,6 +25,8 @@ namespace PrograVisual.Vista
             Actualizar = false;
             Nuevo = false;
             ListarProductos();
+            TooltipListaProductos.SetToolTip(ListaProductos, "Haz doble click para obtener más datos del producto elegido");
+            TooltipListaProductos.SetToolTip(TextBusqueda, "Ingresa el id o nombre del producto a buscar");
         }
 
 
@@ -185,6 +187,7 @@ namespace PrograVisual.Vista
                         {
                             LabelInfo.Text = "Actualización Exitosa!";
                             ListarProductos();
+                            Actualizar = false;
                             TextBusqueda.Visible = true;
                         }
                         else
@@ -366,6 +369,9 @@ namespace PrograVisual.Vista
         private void TextBusqueda_Click(object sender, EventArgs e)
         {
             LabelInfo.Text = "";
+
         }
+
+
     }
 }
