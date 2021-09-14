@@ -44,7 +44,9 @@ namespace PrograVisual.Vista
             SqlDataReader SqlRegistros = sqlComando.ExecuteReader();
             while (SqlRegistros.Read())
             {
-                ListaCategorias.Items.Add("Id: " + SqlRegistros["CategoryID"] + " Cagtegoria: " + SqlRegistros["CategoryName"].ToString());
+                ListaCategorias.Items.Add(
+                    "Id: " + SqlRegistros["CategoryID"] + 
+                    " Cagtegoria: " + SqlRegistros["CategoryName"]);
             }
         }
         public void Update()

@@ -13,3 +13,4 @@ C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\Progr
 C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Vista.Categorias.resources
 C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Vista.CategoriasComponents.ActualizarCategoria.resources
 C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Vista.CategoriasComponents.NuevaCategoria.resources
+C:\Users\USER\Luis\Documentos\Luis\Uni\PrograVisual\PrograVisual\obj\Debug\PrograVisual.Vista.Productos.resources
