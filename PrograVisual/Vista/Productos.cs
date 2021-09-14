@@ -45,6 +45,8 @@ namespace PrograVisual.Vista
         {
             cambiarEstadoElementos();
             BotonConfirmacion.Text = "Actualizar";
+            ComboCategorias.Items.Clear();
+            ComboProveedores.Items.Clear();
             Actualizar = true;
 
             id = ListaProductos.SelectedItem.ToString().Split(' ').ToList();
@@ -146,7 +148,8 @@ namespace PrograVisual.Vista
             if (Actualizar)
             {
                 string textId = TextBusqueda.Text;
-                string textNombreProducto = TextProductName.Text;
+                string textNombreProducto = TextProductName.Text.Replace("'", "''");
+
                 List<string> textCategoria = ComboCategorias.SelectedItem.ToString().Split(' ').ToList();
                 List<string> textProveedores = ComboProveedores.SelectedItem.ToString().Split(' ').ToList();
                 string textCantidadUnidades = TextCantidadesUnidad.Text;
@@ -155,32 +158,42 @@ namespace PrograVisual.Vista
                 string textUnidadesOrdenadas = TextUnidadesOrdenadas.Text;
                 string textReorderLevel = TextReorderLevel.Text;
 
-                String sqlConsulta = "UPDATE Products SET" +
-                    "Productname = '" + textNombreProducto + "'," +
-                    "SupplierID = '" + textProveedores[0] + "'," +
-                    "CategoryID = '" + textCategoria[0] + "'," +
-                    "QuantityPerUnit = '" + textCantidadUnidades + "'," +
-                    "UnitPrice = '" + textPrecioUnitario + "'," +
-                    "UnitsInStock = '" + textUnidadesStock + "'," +
-                    "UnitsOnOrder = '" + textUnidadesOrdenadas + "'," +
-                    "ReorderLevel = '" + textReorderLevel + "'" +
+                String sqlConsulta = "UPDATE Products SET " +
+                    "Productname = '" + textNombreProducto + "', " +
+                    "SupplierID = '" + textProveedores[0] + "', " +
+                    "CategoryID = '" + textCategoria[0] + "', " +
+                    "QuantityPerUnit = '" + textCantidadUnidades + "', " +
+                    "UnitPrice = '" + textPrecioUnitario + "', " +
+                    "UnitsInStock = '" + textUnidadesStock + "', " +
+                    "UnitsOnOrder = '" + textUnidadesOrdenadas + "', " +
+                    "ReorderLevel = '" + textReorderLevel + "' " +
                     "WHERE ProductID = '" + textId + "'";
 
                 SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
                 int filasAfectadas = sqlComando.ExecuteNonQuery();
                 if (filasAfectadas == 1)
                 {
-                    MessageBox.Show("echo");
+                    LabelInfo.Text = "Actualización Exitosa!";
                 }
                 else
                 {
-                    MessageBox.Show("No existe un artículo con el código ingresado");
+                    LabelInfo.Text = "No se pudo actualizar";
                 }
+
                 Actualizar = false;
                 cambiarEstadoElementos();
                 BotonConfirmacion.Text = "";
                 TextBusqueda.Text = "";
             }
+            if (Nuevo)
+            {
+
+            }
+        }
+
+        private void BotonNuevoProducto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -55,6 +55,9 @@ namespace PrograVisual.Vista
             this.TextReorderLevel = new System.Windows.Forms.TextBox();
             this.BotonConfirmacion = new System.Windows.Forms.Button();
             this.BotonCancelar = new System.Windows.Forms.Button();
+            this.LabelInfo = new System.Windows.Forms.Label();
+            this.validatetext = new System.Windows.Forms.TextBox();
+            this.BotonNuevoProducto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +78,7 @@ namespace PrograVisual.Vista
             this.ListaProductos.FormattingEnabled = true;
             this.ListaProductos.Location = new System.Drawing.Point(12, 90);
             this.ListaProductos.Name = "ListaProductos";
-            this.ListaProductos.Size = new System.Drawing.Size(315, 199);
+            this.ListaProductos.Size = new System.Drawing.Size(408, 199);
             this.ListaProductos.TabIndex = 1;
             this.ListaProductos.DoubleClick += new System.EventHandler(this.ListaProductos_DoubleClick);
             // 
@@ -83,7 +86,7 @@ namespace PrograVisual.Vista
             // 
             this.TextBusqueda.Location = new System.Drawing.Point(12, 54);
             this.TextBusqueda.Name = "TextBusqueda";
-            this.TextBusqueda.Size = new System.Drawing.Size(315, 20);
+            this.TextBusqueda.Size = new System.Drawing.Size(408, 20);
             this.TextBusqueda.TabIndex = 2;
             this.TextBusqueda.TextChanged += new System.EventHandler(this.TextBusqueda_TextChanged);
             // 
@@ -273,9 +276,9 @@ namespace PrograVisual.Vista
             // 
             // BotonConfirmacion
             // 
-            this.BotonConfirmacion.Location = new System.Drawing.Point(487, 317);
+            this.BotonConfirmacion.Location = new System.Drawing.Point(478, 294);
             this.BotonConfirmacion.Name = "BotonConfirmacion";
-            this.BotonConfirmacion.Size = new System.Drawing.Size(115, 23);
+            this.BotonConfirmacion.Size = new System.Drawing.Size(115, 32);
             this.BotonConfirmacion.TabIndex = 20;
             this.BotonConfirmacion.UseVisualStyleBackColor = true;
             this.BotonConfirmacion.Visible = false;
@@ -283,19 +286,49 @@ namespace PrograVisual.Vista
             // 
             // BotonCancelar
             // 
-            this.BotonCancelar.Location = new System.Drawing.Point(366, 317);
+            this.BotonCancelar.Location = new System.Drawing.Point(357, 294);
             this.BotonCancelar.Name = "BotonCancelar";
-            this.BotonCancelar.Size = new System.Drawing.Size(115, 23);
+            this.BotonCancelar.Size = new System.Drawing.Size(115, 32);
             this.BotonCancelar.TabIndex = 21;
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
             this.BotonCancelar.Visible = false;
             this.BotonCancelar.Click += new System.EventHandler(this.BotonCancelar_Click);
             // 
+            // LabelInfo
+            // 
+            this.LabelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelInfo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelInfo.Location = new System.Drawing.Point(354, 329);
+            this.LabelInfo.Name = "LabelInfo";
+            this.LabelInfo.Size = new System.Drawing.Size(239, 25);
+            this.LabelInfo.TabIndex = 22;
+            this.LabelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // validatetext
+            // 
+            this.validatetext.Location = new System.Drawing.Point(12, 329);
+            this.validatetext.Name = "validatetext";
+            this.validatetext.Size = new System.Drawing.Size(315, 20);
+            this.validatetext.TabIndex = 23;
+            // 
+            // BotonNuevoProducto
+            // 
+            this.BotonNuevoProducto.Location = new System.Drawing.Point(446, 90);
+            this.BotonNuevoProducto.Name = "BotonNuevoProducto";
+            this.BotonNuevoProducto.Size = new System.Drawing.Size(133, 36);
+            this.BotonNuevoProducto.TabIndex = 24;
+            this.BotonNuevoProducto.Text = "Nuevo Producto";
+            this.BotonNuevoProducto.UseVisualStyleBackColor = true;
+            this.BotonNuevoProducto.Click += new System.EventHandler(this.BotonNuevoProducto_Click);
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(605, 363);
+            this.Controls.Add(this.BotonNuevoProducto);
+            this.Controls.Add(this.validatetext);
+            this.Controls.Add(this.LabelInfo);
             this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.BotonConfirmacion);
             this.Controls.Add(this.ListaProductos);
@@ -353,5 +386,8 @@ namespace PrograVisual.Vista
         private System.Windows.Forms.TextBox TextReorderLevel;
         private System.Windows.Forms.Button BotonConfirmacion;
         private System.Windows.Forms.Button BotonCancelar;
+        private System.Windows.Forms.Label LabelInfo;
+        private System.Windows.Forms.TextBox validatetext;
+        private System.Windows.Forms.Button BotonNuevoProducto;
     }
 }
