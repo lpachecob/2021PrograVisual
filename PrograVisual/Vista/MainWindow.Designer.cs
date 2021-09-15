@@ -32,9 +32,9 @@ namespace PrograVisual.Vista
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ListaApp = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Start = new System.Windows.Forms.PictureBox();
-            this.ListaApp = new System.Windows.Forms.ListBox();
             this.WindowApp = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,6 +64,20 @@ namespace PrograVisual.Vista
             this.panel3.Size = new System.Drawing.Size(182, 268);
             this.panel3.TabIndex = 2;
             // 
+            // ListaApp
+            // 
+            this.ListaApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.ListaApp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListaApp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListaApp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListaApp.ForeColor = System.Drawing.SystemColors.Info;
+            this.ListaApp.FormattingEnabled = true;
+            this.ListaApp.Location = new System.Drawing.Point(0, 0);
+            this.ListaApp.Name = "ListaApp";
+            this.ListaApp.Size = new System.Drawing.Size(182, 268);
+            this.ListaApp.TabIndex = 0;
+            this.ListaApp.SelectedIndexChanged += new System.EventHandler(this.ListaApp_SelectedIndexChanged);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.Start);
@@ -86,20 +100,6 @@ namespace PrograVisual.Vista
             this.Start.TabStop = false;
             this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
-            // ListaApp
-            // 
-            this.ListaApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ListaApp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListaApp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ListaApp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListaApp.ForeColor = System.Drawing.SystemColors.Info;
-            this.ListaApp.FormattingEnabled = true;
-            this.ListaApp.Location = new System.Drawing.Point(0, 0);
-            this.ListaApp.Name = "ListaApp";
-            this.ListaApp.Size = new System.Drawing.Size(182, 268);
-            this.ListaApp.TabIndex = 0;
-            this.ListaApp.SelectedIndexChanged += new System.EventHandler(this.ListaApp_SelectedIndexChanged);
-            // 
             // WindowApp
             // 
             this.WindowApp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -118,6 +118,7 @@ namespace PrograVisual.Vista
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);

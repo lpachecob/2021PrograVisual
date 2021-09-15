@@ -52,7 +52,12 @@ namespace PrograVisual.Vista
 
             id = ListaProductos.SelectedItem.ToString().Split(' ').ToList();
 
-            String sqlConsulta = "SELECT * FROM Products INNER JOIN Categories on Categories.CategoryID=Products.CategoryID INNER JOIN Suppliers ON Suppliers.SupplierID=Products.SupplierID WHERE Discontinued = 0 AND ProductID = '" + id[1] + "'";
+            String sqlConsulta = "" +
+                "SELECT * FROM Products " +
+                "INNER JOIN Categories on Categories.CategoryID=Products.CategoryID " +
+                "INNER JOIN Suppliers ON Suppliers.SupplierID=Products.SupplierID " +
+                "WHERE Discontinued = 0 AND " +
+                "ProductID = '" + id[1] + "'";
 
             SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
             SqlDataReader SqlRegistros = sqlComando.ExecuteReader();
@@ -72,74 +77,6 @@ namespace PrograVisual.Vista
             ComboProveedores.SelectedIndex = 0;
 
             LlenarCombobox();
-        }
-
-        public void ListarProductos(string productID = null)
-        {
-            String sqlConsulta;
-            ListaProductos.Items.Clear();
-            if (productID != null)
-            {
-                sqlConsulta = "SELECT * FROM Products WHERE Discontinued = 0 AND (ProductID like '%" + productID + "%' OR ProductName like '%" + productID + "%' )";
-            }
-            else
-            {
-                sqlConsulta = "SELECT * FROM Products WHERE Discontinued = 0";
-            }
-            SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
-            SqlDataReader SqlRegistros = sqlComando.ExecuteReader();
-            while (SqlRegistros.Read())
-            {
-                ListaProductos.Items.Add(
-                    "Id: " + SqlRegistros["ProductID"] +
-                    " Producto: " + SqlRegistros["ProductName"]);
-            }
-        }
-
-        public void LlenarCombobox()
-        {
-            String sqlConsulta = "SELECT CategoryID,CategoryName FROM Categories ORDER BY CategoryID ASC";
-
-            SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
-            SqlDataReader SqlRegistros = sqlComando.ExecuteReader();
-            while (SqlRegistros.Read())
-            {
-                ComboCategorias.Items.Add("" + SqlRegistros["CategoryID"] + " - " + SqlRegistros["CategoryName"]);
-            }
-            sqlConsulta = "SELECT SupplierID,CompanyName FROM Suppliers ORDER BY SupplierID ASC";
-
-            sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
-            SqlRegistros = sqlComando.ExecuteReader();
-            while (SqlRegistros.Read())
-            {
-                ComboProveedores.Items.Add("" + SqlRegistros["SupplierID"] + " - " + SqlRegistros["CompanyName"]);
-            }
-        }
-
-        public void cambiarEstadoElementos()
-        {
-            ListaProductos.Visible = !ListaProductos.Visible;
-            TextBusqueda.ReadOnly = !TextBusqueda.ReadOnly;
-            label3.Visible = !label3.Visible;
-            label4.Visible = !label4.Visible;
-            label5.Visible = !label5.Visible;
-            label6.Visible = !label6.Visible;
-            label7.Visible = !label7.Visible;
-            label8.Visible = !label8.Visible;
-            label9.Visible = !label9.Visible;
-            label10.Visible = !label10.Visible;
-            TextProductName.Visible = !TextProductName.Visible;
-            ComboCategorias.Visible = !ComboCategorias.Visible;
-            ComboProveedores.Visible = !ComboProveedores.Visible;
-            TextCantidadesUnidad.Visible = !TextCantidadesUnidad.Visible;
-            TextPrecioUnitario.Visible = !TextPrecioUnitario.Visible;
-            TextUnidadesStock.Visible = !TextUnidadesStock.Visible;
-            TextUnidadesOrdenadas.Visible = !TextUnidadesOrdenadas.Visible;
-            TextReorderLevel.Visible = !TextReorderLevel.Visible;
-            BotonCancelar.Visible = !BotonCancelar.Visible;
-            BotonConfirmacion.Visible = !BotonConfirmacion.Visible;
-            BotonNuevoProducto.Visible = !BotonNuevoProducto.Visible;
-            BtnEliminar.Visible = !BtnEliminar.Visible;
         }
 
         private void BotonCancelar_Click(object sender, EventArgs e)
@@ -371,6 +308,83 @@ namespace PrograVisual.Vista
             LabelInfo.Text = "";
 
         }
+
+        public void ListarProductos(string productID = null)
+        {
+            String sqlConsulta;
+            ListaProductos.Items.Clear();
+            if (productID != null)
+            {
+                sqlConsulta = "SELECT * FROM Products " +
+                    "WHERE Discontinued = 0 " +
+                    "AND (" +
+                    "ProductID like '%" + productID + "%' OR " +
+                    "ProductName like '%" + productID + "%'" +
+                    " )";
+            }
+            else
+            {
+                sqlConsulta = "SELECT * FROM Products " +
+                    "WHERE Discontinued = 0";
+            }
+            SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
+            SqlDataReader SqlRegistros = sqlComando.ExecuteReader();
+            while (SqlRegistros.Read())
+            {
+                ListaProductos.Items.Add(
+                    "Id: " + SqlRegistros["ProductID"] +
+                    " Producto: " + SqlRegistros["ProductName"]);
+            }
+        }
+
+        public void LlenarCombobox()
+        {
+            String sqlConsulta = "SELECT CategoryID,CategoryName FROM Categories " +
+                "ORDER BY CategoryID ASC";
+
+            SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
+            SqlDataReader SqlRegistros = sqlComando.ExecuteReader();
+            while (SqlRegistros.Read())
+            {
+                ComboCategorias.Items.Add("" + SqlRegistros["CategoryID"] + " - " + SqlRegistros["CategoryName"]);
+            }
+            sqlConsulta = "SELECT SupplierID,CompanyName FROM Suppliers ORDER BY SupplierID ASC";
+
+            sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
+            SqlRegistros = sqlComando.ExecuteReader();
+            while (SqlRegistros.Read())
+            {
+                ComboProveedores.Items.Add("" + SqlRegistros["SupplierID"] + " - " + SqlRegistros["CompanyName"]);
+            }
+        }
+
+        public void cambiarEstadoElementos()
+        {
+            ListaProductos.Visible = !ListaProductos.Visible;
+            TextBusqueda.ReadOnly = !TextBusqueda.ReadOnly;
+            label3.Visible = !label3.Visible;
+            label4.Visible = !label4.Visible;
+            label5.Visible = !label5.Visible;
+            label6.Visible = !label6.Visible;
+            label7.Visible = !label7.Visible;
+            label8.Visible = !label8.Visible;
+            label9.Visible = !label9.Visible;
+            label10.Visible = !label10.Visible;
+            TextProductName.Visible = !TextProductName.Visible;
+            ComboCategorias.Visible = !ComboCategorias.Visible;
+            ComboProveedores.Visible = !ComboProveedores.Visible;
+            TextCantidadesUnidad.Visible = !TextCantidadesUnidad.Visible;
+            TextPrecioUnitario.Visible = !TextPrecioUnitario.Visible;
+            TextUnidadesStock.Visible = !TextUnidadesStock.Visible;
+            TextUnidadesOrdenadas.Visible = !TextUnidadesOrdenadas.Visible;
+            TextReorderLevel.Visible = !TextReorderLevel.Visible;
+            BotonCancelar.Visible = !BotonCancelar.Visible;
+            BotonConfirmacion.Visible = !BotonConfirmacion.Visible;
+            BotonNuevoProducto.Visible = !BotonNuevoProducto.Visible;
+            BtnEliminar.Visible = !BtnEliminar.Visible;
+        }
+
+
 
 
     }
