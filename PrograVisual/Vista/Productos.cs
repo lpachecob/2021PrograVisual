@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using PrograVisual.Controlador;
 
 
+
 namespace PrograVisual.Vista
 {
     public partial class Productos : PrograVisual.Vista.Layout
@@ -52,12 +53,7 @@ namespace PrograVisual.Vista
 
             id = ListaProductos.SelectedItem.ToString().Split(' ').ToList();
 
-            String sqlConsulta = "" +
-                "SELECT * FROM Products " +
-                "INNER JOIN Categories on Categories.CategoryID=Products.CategoryID " +
-                "INNER JOIN Suppliers ON Suppliers.SupplierID=Products.SupplierID " +
-                "WHERE Discontinued = 0 AND " +
-                "ProductID = '" + id[1] + "'";
+            String sqlConsulta = "EXEC SelectAllProductsWhithProductID @Param_ProductID = " + id[1];
 
             SqlCommand sqlComando = new SqlCommand(sqlConsulta, database.Conexion());
             SqlDataReader SqlRegistros = sqlComando.ExecuteReader();
@@ -104,16 +100,16 @@ namespace PrograVisual.Vista
                     string textUnidadesOrdenadas = TextUnidadesOrdenadas.Text;
                     string textReorderLevel = TextReorderLevel.Text;
 
-                    String sqlConsulta = "UPDATE Products SET " +
-                        "Productname = '" + textNombreProducto + "', " +
-                        "SupplierID = '" + textProveedores[0] + "', " +
-                        "CategoryID = '" + textCategoria[0] + "', " +
-                        "QuantityPerUnit = '" + textCantidadUnidades + "', " +
-                        "UnitPrice = '" + textPrecioUnitario + "', " +
-                        "UnitsInStock = '" + textUnidadesStock + "', " +
-                        "UnitsOnOrder = '" + textUnidadesOrdenadas + "', " +
-                        "ReorderLevel = '" + textReorderLevel + "' " +
-                        "WHERE ProductID = '" + textId + "'";
+                    String sqlConsulta = "UpdateProduct " +
+                        "@Param_ProductID = '" + textId + "', " +
+                        "@Param_ProductName = '" + textNombreProducto + "', " +
+                        "@Param_SuplierID = '" + textProveedores[0] + "', " +
+                        "@Param_CategoryID = '" + textCategoria[0] + "', " +
+                        "@Param_QuantityPerUnit = '" + textCantidadUnidades + "', " +
+                        "@Param_UnitPrice = '" + textPrecioUnitario + "', " +
+                        "@Param_UnitsInStock = '" + textUnidadesStock + "', " +
+                        "@Param_UnitsOnOrder = '" + textUnidadesOrdenadas + "', " +
+                        "@Param_ReorderLevel = '" + textReorderLevel + "' ";
 
                     DialogResult dialogResult = MessageBox.Show("Está seguro de añadir el nuevo producto", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
@@ -170,18 +166,15 @@ namespace PrograVisual.Vista
                     string textReorderLevel = TextReorderLevel.Text.ToString();
 
 
-                    String sqlConsulta = "INSERT INTO Products (" +
-                        "ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued) " +
-                        "VALUES(" +
-                        "'" + textNombreProducto + "', " +
-                        "'" + textProveedores[0] + "', " +
-                        "'" + textCategoria[0] + "', " +
-                        "'" + textCantidadUnidades + "', " +
-                        "'" + textPrecioUnitario + "', " +
-                        "'" + textUnidadesStock + "', " +
-                        "'" + textUnidadesOrdenadas + "', " +
-                        "'" + textReorderLevel + "', " +
-                        "0)";
+                    String sqlConsulta = "EXEC InsertProduct " +
+                        "@Param_ProductName = '" + textNombreProducto + "', " +
+                        "@Param_SuplierID = '" + textProveedores[0] + "', " +
+                        "@Param_CategoryID = '" + textCategoria[0] + "', " +
+                        "@Param_QuantityPerUnit = '" + textCantidadUnidades + "', " +
+                        "@Param_UnitPrice = '" + textPrecioUnitario + "', " +
+                        "@Param_UnitsInStock = '" + textUnidadesStock + "', " +
+                        "@Param_UnitsOnOrder = '" + textUnidadesOrdenadas + "', " +
+                        "@Param_ReorderLevel = '" + textReorderLevel + "'";
 
                     DialogResult dialogResult = MessageBox.Show("Está seguro de añadir el nuevo producto", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
@@ -257,9 +250,7 @@ namespace PrograVisual.Vista
             {
                 string textId = TextBusqueda.Text;
 
-                String sqlConsulta = "UPDATE Products SET " +
-                        "Discontinued = '1'" +
-                        "WHERE ProductID = '" + textId + "'";
+                String sqlConsulta = "EXEC ChangeDiscontinued @Param_ProductID = '" + textId + "'";
 
                 DialogResult dialogResult = MessageBox.Show("Está seguro de eliminar el producto", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
@@ -383,9 +374,5 @@ namespace PrograVisual.Vista
             BotonNuevoProducto.Visible = !BotonNuevoProducto.Visible;
             BtnEliminar.Visible = !BtnEliminar.Visible;
         }
-
-
-
-
     }
 }

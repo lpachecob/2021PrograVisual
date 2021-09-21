@@ -150,9 +150,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modelo\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Vista\Assets\Images\close.png" />
     <Content Include="Vista\Assets\Images\closeWhite.png" />
