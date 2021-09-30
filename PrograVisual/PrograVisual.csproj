@@ -90,6 +90,12 @@
     <Compile Include="Vista\Productos.Designer.cs">
       <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\ProductosDataGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ProductosDataGridView.Designer.cs">
+      <DependentUpon>ProductosDataGridView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\VentanaInicio.cs">
       <SubType>Form</SubType>
     </Compile>
